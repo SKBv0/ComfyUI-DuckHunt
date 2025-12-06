@@ -1,0 +1,175 @@
+#duckhunt-game-panel {
+    position: relative;
+    background: transparent;
+    isolation: isolate;
+    --duck-scale: 1;
+}
+
+#duckhunt-game-panel::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(350px * var(--duck-scale, 1));
+    background: url("/duck_shooter/resources/sprites/background/bushes_seamless.png") center bottom / auto calc(350px * var(--duck-scale, 1)) repeat-x;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Scoped to game container only */
+#duckhunt-game-container {
+    position: relative;
+    z-index: 1;
+    font-family: 'Bungee', 'Righteous', cursive, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    user-select: none;
+    /* Preload images */
+    content: url("/duck_shooter/resources/sprites/duck/hit.png") url("/duck_shooter/resources/sprites/duck/flyrightup.gif") url("/duck_shooter/resources/sprites/duck/flyrightdown.gif") url("/duck_shooter/resources/sprites/duck/flyleftup.gif") url("/duck_shooter/resources/sprites/duck/flyleftdown.gif") url("/duck_shooter/resources/sprites/duck/flyright.gif") url("/duck_shooter/resources/sprites/duck/flyleft.gif") url("/duck_shooter/resources/sprites/duck/falling.gif");
+}
+
+#duckhunt-game-container h3 {
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+#duckhunt-game-container h2 {
+    color: white;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+#duckhunt-game-container .sky {
+    position: relative;
+    overflow: hidden;
+    background-image: none !important;
+    background-color: transparent !important;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: crosshair;
+    pointer-events: auto !important;
+    z-index: 0;
+}
+
+#duckhunt-game-container #sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
+#duckhunt-game-container .bushes {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    height: calc(350px * var(--duck-scale, 1));
+    background: url("/duck_shooter/resources/sprites/background/bushes_seamless.png") center bottom / auto calc(350px * var(--duck-scale, 1)) repeat-x;
+    background-color: transparent !important;
+}
+
+#duckhunt-game-container .bushes::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background: url("/duck_shooter/resources/sprites/background/bushes.png") center bottom / auto calc(350px * var(--duck-scale, 1)) no-repeat;
+    pointer-events: none;
+    z-index: 3;
+}
+
+#duckhunt-game-container .duck {
+    left: 48%;
+    bottom: 0px;
+    background-image: url("/duck_shooter/resources/sprites/duck/flyleft.gif");
+    position: absolute;
+    animation-timing-function: linear;
+    width: 78px;
+    height: 73px;
+    background-size: 100%;
+    z-index: -1;
+}
+
+#duckhunt-game-container .dog {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+}
+
+#duckhunt-game-container #dog2 {
+    z-index: 0 !important;
+}
+
+#duckhunt-game-container #dog1 {
+    width: 120px;
+    height: 81px;
+    left: 0%;
+    bottom: 60px;
+    background-image: url("/duck_shooter/resources/sprites/dog/dogeWalking.gif");
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    content: url("/duck_shooter/resources/sprites/dog/dogeWalking.gif") url("/duck_shooter/resources/sprites/dog/snif.gif") url("/duck_shooter/resources/sprites/dog/pawelJumper.gif");
+}
+
+#duckhunt-game-container #dog2 {
+    width: 120px;
+    height: 95px;
+    left: 48%;
+    bottom: 10px;
+    content: url("/duck_shooter/resources/sprites/dog/gotOne.png") url("/duck_shooter/resources/sprites/dog/gotTwo.png") url("/duck_shooter/resources/sprites/dog/bk.gif");
+    z-index: 0 !important;
+}
+
+#duckhunt-game-container .easingOut {
+    animation-name: dog2Show;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+#duckhunt-game-container .comboMessage {
+    display: none;
+    z-index: 7;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    animation-name: flash;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flash {
+    0% {color: red}
+    100% {color: black}
+}
+
+@keyframes dogJump {
+    0%  {left: 40%; bottom: 20px;}
+    25%  {left: 40%; bottom: 80px;}
+    50%  {left: 42%; bottom: 140px;}
+    75%  {left: 45%; bottom: 180px;}
+    100% {left: 47%; bottom: 40px;}
+}
+
+@keyframes dog2Show {
+    0%  {left: 48%; bottom: -95px;}
+    20%  {left: 48%; bottom: 120px;}
+    80%  {left: 48%; bottom: 120px;}
+    100%  {left: 48%; bottom: -95px;}
+}

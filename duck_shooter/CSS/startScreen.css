@@ -1,0 +1,82 @@
+/* All styles scoped to game container */
+
+#duckhunt-game-container .cursorChange:hover{
+    cursor: pointer;
+    color: green;
+}
+
+#duckhunt-game-container #startScreen{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background: transparent !important;
+    text-align: center;
+    pointer-events: auto;
+}
+
+#duckhunt-game-container .startScreen__content{
+    position: relative;
+    top: 45%;
+    margin: auto;
+    padding-top: 2em; /* Replaces <br> tags */
+}
+
+#duckhunt-game-container #startButton{
+    width: 100%;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+    color: red;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+#duckhunt-game-container #startButton:hover{
+    letter-spacing: 10px;
+    color: rgb(0, 215, 253);
+    cursor: pointer;
+}
+
+#duckhunt-game-container .startScreen__content__box{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: auto;
+    width: 50%;
+    max-width: 360px;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+#duckhunt-game-container .selection{
+    width: 70%;
+    color: yellow;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(255, 255, 0, 0.5);
+}
+
+#duckhunt-game-container .arrow{
+    color: rgb(0, 0, 255);
+    font-size: 30px;
+    font-weight: 400;
+    width: 15%;
+    transition: 0.5s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+#duckhunt-game-container .arrow:hover{
+    color: red;
+    cursor: pointer;
+}
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Duck Hunt 2.0</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/duck_shooter/resources/sprites/duck/png/right1.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/duck_shooter/CSS/styles.css">
+    <link rel="stylesheet" href="/duck_shooter/CSS/bar.css">
+    <link rel="stylesheet" href="/duck_shooter/CSS/overlays.css">
+    <link rel="stylesheet" href="/duck_shooter/CSS/startScreen.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <div id="startScreen">
+        <div class="startScreen__content">
+            <div class="startScreen__content__box" id="startGameButton" role="button" tabindex="0" aria-label="Start game">
+                <h2 id="startButton">START GAME</h2>
+            </div>
+            <div class="startScreen__content__box" id="modeSelect" role="group" aria-label="Game mode selection">
+                <div class="arrow" id="prevMode" role="button" tabindex="0" aria-label="Previous mode">⏴</div>
+                <div class="selection" aria-live="polite">CLASSIC</div>
+                <div class="arrow" id="nextMode" role="button" tabindex="0" aria-label="Next mode">⏵</div>  
+            </div>
+        </div>
+    </div>
+
+    <div id="sky" class="sky">
+
+        <div class="comboMessage"></div>
+
+        <div class="dog" id="dog1"></div>
+
+        <div class="dog" id="dog2"></div>
+
+        <div id="pointsCounter">
+            <h2 id="levelCount">1</h2>
+        </div>
+
+        <div class="bushes">
+            <div class="barRow">
+                <div class="rowCell ammunitionCell" id="shots">
+                    <div class="ammunitionCell__info">
+                        <h2 id="ammunitionAmmount">0</h2>
+                        <h2>SHOT</h2>
+                    </div>
+                    <div class="ammunitionCell__gunIcon">
+                        <img id="gunIcon" src="/duck_shooter/resources/sprites/weapons/gun.png" alt="Weapon icon">
+                    </div>
+                </div>
+
+                <div class="rowCell" id="hit">
+                    <div class="lifesIcons">
+                        <img id="life1" src="/duck_shooter/resources/sprites/scoreImages/life.png" alt="Life 1">
+                        <img id="life2" src="/duck_shooter/resources/sprites/scoreImages/life.png" alt="Life 2">
+                        <img id="life3" src="/duck_shooter/resources/sprites/scoreImages/life.png" alt="Life 3">                            
+                    </div>
+                    <div class="progress">
+                        <div id="roundProgress" class="progress-bar progress-bar-striped active" role="progressbar"
+                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Round progress">
+                            0%
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rowCell scoreCell" id="score">
+                    <h2 id="scoreCount">0</h2>
+                    <h2>SCORE</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="shootBlocker"></div>
+
+    <div id="overlay">
+        <div class="resultsBox">
+            <h3 class="game-over-title">Game Over!</h3>
+            <table>
+                <tr>
+                    <td>YOUR POINTS</td>
+                    <td id="pointsSummary"></td>
+                </tr>
+                <tr>
+                    <td>ROUND</td>
+                    <td id="roundSummary"></td>
+                </tr>
+                <tr>
+                    <td>SUCCESSFUL SHOTS</td>
+                    <td id="shotsSummary"></td>
+                </tr>
+                <tr>
+                    <td>ACCURACY</td>
+                    <td id="accuracySummary"></td>
+                </tr>
+
+            </table>
+
+            <h3 id="playAgainButton" class="cursorChange" role="button" tabindex="0" aria-label="Play again">PLAY AGAIN</h3>
+        
+        </div>
+    </div>
+
+    <script src="/duck_shooter/js/sounds.js"></script>
+    <script src="/duck_shooter/js/DogClass.js"></script>
+    <script src="/duck_shooter/js/DuckClass.js"></script>
+    <script src="/duck_shooter/js/PointsHandler.js"></script>
+    <script src="/duck_shooter/js/ShotHandler.js"></script>
+    <script src="/duck_shooter/js/DucksHandler.js"></script>
+    <script src="/duck_shooter/js/View.js"></script>
+    <script src="/duck_shooter/js/Game.js"></script>
+    <script src="/duck_shooter/js/StartScreen.js"></script>
+    <script src="/duck_shooter/js/Application.js"></script>
+
+</body>
+</html>
