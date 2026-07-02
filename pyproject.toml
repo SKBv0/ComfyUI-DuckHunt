@@ -1,0 +1,23 @@
+[project]
+name = "ComfyUI-DuckHunt"
+version = "1.0.0"
+description = "Classic Duck Hunt game integrated as a ComfyUI custom node with interactive gameplay."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "SKBv0" }
+]
+keywords = ["comfyui", "game", "duck-hunt", "frontend-extension"]
+classifiers = [
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/SKBv0/ComfyUI-DuckHunt"
+"Bug Tracker" = "https://github.com/SKBv0/ComfyUI-DuckHunt/issues"
+
+[tool.comfy]
+PublisherId = "skb"
+DisplayName = "ComfyUI DuckHunt"
